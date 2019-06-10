@@ -1,2 +1,17 @@
-<h1>School#show</h1>
-<p>Find me in app/views/school/show.html.erb</p>
+<h1><%= "#{@school.name}" %></h1>
+
+<p>
+
+Name: <%= "#{@school.name}" %>
+<br>
+Address: <%= "#{@school.address}" %>
+<br>
+Students:
+
+<ul>
+  <% @school.students.each do |student| %>
+    <li><%= link_to student.name, student_path(student.id) %><%= button_to 'delete', {:controller => :students , :action => 'delete', :id => student.id }, :method => :delete %></li>
+  <% end %>
+</ul>
+
+</p>

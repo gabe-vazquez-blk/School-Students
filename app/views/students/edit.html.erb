@@ -1,0 +1,10 @@
+<h1>Edit Student</h1>
+
+<%=form_for @student do |f|%>
+  <%=f.label 'name'%>
+  <%=f.text_field 'name'%>
+  <%=f.label 'age'%>
+  <%=f.text_field 'age'%>
+  <%=collection_select(:students, :school_id, @schools, :id, :name, {:selected => @student.school.id})%>
+  <%=f.submit "Update"%>
+<%end%>

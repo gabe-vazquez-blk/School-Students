@@ -1,0 +1,10 @@
+<h1><%="#{@student.name}" %></h1>
+
+<p>
+
+Age: <%= "#{@student.age}" %>
+<br>
+School: <%= "#{@student.school.name}" %>
+
+</p>
+<%= button_to 'edit', {:controller => :students, :action => 'edit', :id => @student.id }, :method => :get %>
